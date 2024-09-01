@@ -13,6 +13,7 @@ import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";
 import { InputNode } from "./components/nodes/InputNode";
+import YouTubeLoaderNode from "./components/nodes/YoutubeLoaderNode";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -21,6 +22,7 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  youtubeLoader: YouTubeLoaderNode,
 };
 
 const selector = (state) => ({
