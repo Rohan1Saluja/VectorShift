@@ -33,16 +33,21 @@ const TemplateNode = ({
         <TextInputs textInputs={content?.textInputs} />
 
         {content?.selectInputs &&
-          content?.selectInputs?.map((selectElement) => (
-            <label className="flex flex-col w-full flex-1 relative p-1">
+          content?.selectInputs?.map((selectElement, index) => (
+            <label
+              key={index}
+              className="flex flex-col w-full flex-1 relative p-1"
+            >
               {selectElement.label}
               <select
                 value={selectElement.value}
                 onChange={selectElement.onChange}
                 className={selectElement.classNames}
               >
-                {selectElement?.options?.map((option) => (
-                  <option value={option}>{option}</option>
+                {selectElement?.options?.map((option, index) => (
+                  <option key={index} value={option}>
+                    {option}
+                  </option>
                 ))}
               </select>
             </label>
