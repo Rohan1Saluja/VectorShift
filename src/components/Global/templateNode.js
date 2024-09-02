@@ -1,5 +1,6 @@
 import { Handle } from "reactflow";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import TextInputs from "./contentSections/textInputs";
 
 const TemplateNode = ({
   id,
@@ -9,9 +10,8 @@ const TemplateNode = ({
   labelIcon,
   helperText,
 }) => {
-  console.log("Label Icon: ", labelIcon);
   return (
-    <div className="flex flex-col p-2 min-h-[8rem] min-w-[12rem] shadow-[0_0.1rem_0.5rem_0.1rem_#cecffc] rounded-md relative">
+    <div className="flex flex-col p-2 min-h-[8rem] min-w-[12rem] w-auto h-auto shadow-[0_0.1rem_0.5rem_0.1rem_#cecffc] rounded-md relative">
       {handles?.map((handle) => (
         <Handle
           key={handle.id}
@@ -29,7 +29,25 @@ const TemplateNode = ({
         </div>
         <IoMdCloseCircleOutline className="hover:cursor-pointer" />
       </div>
-      <div className="flex flex-col gap-2 py-2">{content}</div>
+      <div className="flex flex-col gap-2 py-2">
+        <TextInputs textInputs={content?.textInputs} />
+
+        {content?.selectInputs &&
+          content?.selectInputs?.map((selectElement) => (
+            <label className="flex flex-col w-full flex-1 relative p-1">
+              {selectElement.label}
+              <select
+                value={selectElement.value}
+                onChange={selectElement.onChange}
+                className={selectElement.classNames}
+              >
+                {selectElement?.options?.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+          ))}
+      </div>
       <span className="text-xs text-gray-600 p-1">{helperText}</span>
     </div>
   );
