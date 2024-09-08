@@ -8,7 +8,7 @@ import { useStore } from "./store";
 import { shallow } from "zustand/shallow";
 // import { InputNode } from './nodes/inputNode';
 import { LLMNode } from "./nodes/llmNode";
-import { OutputNode } from "./nodes/outputNode";
+import { OutputNode } from "./components/nodes/OutputNode";
 import { TextNode } from "./nodes/textNode";
 
 import "reactflow/dist/style.css";

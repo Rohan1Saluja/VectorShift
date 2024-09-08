@@ -10,6 +10,7 @@ const TemplateNode = ({
   labelIcon,
   helperText,
 }) => {
+  console.log("Handles: ", handles);
   return (
     <div className="flex flex-col p-2 min-h-[8rem] min-w-[12rem] w-auto h-auto shadow-[0_0.1rem_0.5rem_0.1rem_#cecffc] rounded-md relative">
       {handles?.map((handle) => (

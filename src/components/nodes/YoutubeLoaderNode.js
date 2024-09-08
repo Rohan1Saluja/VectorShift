@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import TemplateNode from "../Global/templateNode";
 import { MdOutlineSmartDisplay } from "react-icons/md";
 import { Position } from "reactflow";
@@ -27,6 +26,12 @@ const YouTubeLoaderNode = ({ id, data }) => {
       position: Position.Left,
       id: `${id}-value`,
       classNames: "!left-[-0.4rem]",
+    },
+    {
+      type: "source",
+      position: Position.Right,
+      id: `${id}-value2`,
+      classNames: "!right-[-0.4rem]",
     },
   ];
 
